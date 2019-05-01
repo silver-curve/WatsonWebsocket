@@ -363,6 +363,11 @@ namespace WatsonWebsocket
 
                 #endregion
             }
+            catch (TaskCanceledException)
+            {
+                disconnectDetected = true;
+                return false;
+            }
             catch (ObjectDisposedException ObjDispInner)
             {
                 Log("*** MessageWriteAsync disconnected (obj disposed exception): " + ObjDispInner.Message);

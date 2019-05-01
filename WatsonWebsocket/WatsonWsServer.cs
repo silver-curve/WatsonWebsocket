@@ -372,7 +372,7 @@ namespace WatsonWebsocket
             }
             catch (WebSocketException wse)
             {
-                Log("DataReceiver client " + clientId + " disconnected (websocket exception): " + wse.Message);
+                Log("DataReceiver client " + clientId + " disconnected (websocket exception): " + wse.Message + "\n" + wse.InnerException.Message);
             }
             finally
             {
